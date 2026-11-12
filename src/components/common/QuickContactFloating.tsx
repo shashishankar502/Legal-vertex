@@ -18,7 +18,7 @@ function WhatsAppIcon({ className = "w-6 h-6" }: { className?: string }) {
 
 export function QuickContactFloating() {
   const telHref = `tel:${siteConfig.contact.phone.replace(/[^0-9+]/g, "")}`;
-  const whatsappNumber = (siteConfig.contact.whatsapp || "+18005550199").replace(/[^0-9]/g, "");
+  const whatsappNumber = (siteConfig.contact.whatsapp || "+919122630161").replace(/[^0-9]/g, "");
   const whatsappMessage = encodeURIComponent(
     siteConfig.contact.whatsappText || "Hello, I would like to request a confidential legal consultation."
   );

@@ -1,7 +1,8 @@
 import Link from "next/link";
+import Image from "next/image";
 import { siteConfig } from "@/lib/site-config";
 import { practiceAreas } from "@/lib/data/practice-areas";
-import { Scale, Phone, Mail, MapPin, ShieldCheck } from "lucide-react";
+import { Phone, Mail, MapPin, ShieldCheck } from "lucide-react";
 
 export function Footer() {
   const currentYear = 2026;
@@ -16,13 +17,14 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-7 sm:gap-10">
           {/* Brand & Mission */}
           <div className="lg:col-span-2 space-y-4">
-            <Link href="/" className="inline-flex items-center gap-2">
-              <div className="w-10 h-10 rounded-lg bg-slate-900 flex items-center justify-center text-amber-400 font-bold">
-                <Scale className="w-5 h-5" />
-              </div>
-              <span className="text-xl font-bold tracking-tight text-slate-900">
-                LEGAL <span className="text-amber-600 font-serif">VERTEX</span>
-              </span>
+            <Link href="/" className="inline-block group focus:outline-none" aria-label="Legal Vertex Home">
+              <Image
+                src="/logo.png"
+                alt="Legal Vertex"
+                width={260}
+                height={133}
+                className="h-12 sm:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+              />
             </Link>
             <p className="text-sm text-slate-600 max-w-sm leading-relaxed">
               Legal Vertex LLP delivers aggressive litigation defense, strategic corporate M&amp;A advisory, intellectual property counseling, and regulatory compliance guidance for ambitious organizations.
@@ -102,40 +104,64 @@ export function Footer() {
           {/* Direct Contact & NAP */}
           <div className="space-y-3">
             <h3 className="text-xs uppercase tracking-wider text-slate-900 font-bold">
-              Contact &amp; Headquarters
+              Office Locations
             </h3>
-            <address className="not-italic text-sm text-slate-600 space-y-2.5">
-              <div className="flex items-start gap-2.5">
+            <address className="not-italic text-xs sm:text-sm text-slate-600 space-y-3">
+              {/* Patna */}
+              <div className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
-                <span>
-                  {siteConfig.contact.address.streetAddress}
-                  <br />
-                  {siteConfig.contact.address.addressLocality},{" "}
-                  {siteConfig.contact.address.addressRegion}{" "}
-                  {siteConfig.contact.address.postalCode}
-                </span>
+                <div>
+                  <strong className="block text-slate-900 font-semibold text-xs">Office 1 (Patna):</strong>
+                  <span className="text-[11px] sm:text-xs leading-relaxed block">
+                    Flat No - 703, 7th Floor, Venus Empire, Khagaul Road, Patna &ndash; 801503
+                  </span>
+                </div>
               </div>
-              <div className="flex items-center gap-2.5">
-                <Phone className="w-4 h-4 text-amber-600 shrink-0" />
-                <a
-                  href={`tel:${siteConfig.contact.phone.replace(/[^0-9+]/g, "")}`}
-                  className="hover:text-amber-600 transition-colors font-medium text-slate-800"
-                >
-                  {siteConfig.contact.displayPhone}
-                </a>
+
+              {/* Bengaluru */}
+              <div className="flex items-start gap-2">
+                <MapPin className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
+                <div>
+                  <strong className="block text-slate-900 font-semibold text-xs">Office 2 (Bengaluru):</strong>
+                  <span className="text-[11px] sm:text-xs leading-relaxed block">
+                    Flat No - 007, Ground Floor, Block-A, Shakti Sprinkle Apt, Begur, Bengaluru &ndash; 560068
+                  </span>
+                </div>
               </div>
-              <div className="flex items-center gap-2.5">
-                <Mail className="w-4 h-4 text-amber-600 shrink-0" />
-                <a
-                  href={`mailto:${siteConfig.contact.email}`}
-                  className="hover:text-amber-600 transition-colors"
-                >
-                  {siteConfig.contact.email}
-                </a>
+
+              {/* Contact info */}
+              <div className="pt-1 space-y-1.5 border-t border-slate-200">
+                <div className="flex items-center gap-2">
+                  <Phone className="w-3.5 h-3.5 text-amber-600 shrink-0" />
+                  <div className="flex flex-wrap items-center gap-x-2 text-xs">
+                    <a
+                      href={`tel:${siteConfig.contact.phone.replace(/[^0-9+]/g, "")}`}
+                      className="hover:text-amber-600 transition-colors font-semibold text-slate-800"
+                    >
+                      {siteConfig.contact.displayPhone}
+                    </a>
+                    <span className="text-slate-400">/</span>
+                    <a
+                      href={`tel:${siteConfig.contact.secondaryPhone.replace(/[^0-9+]/g, "")}`}
+                      className="hover:text-amber-600 transition-colors font-semibold text-slate-800"
+                    >
+                      {siteConfig.contact.secondaryDisplayPhone}
+                    </a>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Mail className="w-3.5 h-3.5 text-amber-600 shrink-0" />
+                  <a
+                    href={`mailto:${siteConfig.contact.email}`}
+                    className="hover:text-amber-600 transition-colors text-xs"
+                  >
+                    {siteConfig.contact.email}
+                  </a>
+                </div>
               </div>
             </address>
-            <div className="pt-2 text-xs text-slate-500">
-              Hours: Mon &ndash; Fri (8:30 AM &ndash; 6:30 PM PST)
+            <div className="pt-1 text-[11px] text-slate-500">
+              Hours: Mon &ndash; Fri (9:00 AM &ndash; 7:00 PM IST)
             </div>
           </div>
         </div>

@@ -34,8 +34,8 @@ export const attorneys: Attorney[] = [
       "Corporate Law & Governance",
       "Employment Law & Executive Compensation",
     ],
-    email: "m.vance@legalvertex.com",
-    phone: "+1 (800) 555-0199 ext. 101",
+    email: "legalvertexservices@gmail.com",
+    phone: "+91 91226 30161 ext. 101",
   },
   {
     slug: "elena-rostova",
@@ -58,8 +58,8 @@ export const attorneys: Attorney[] = [
       "Commercial Litigation & Dispute Resolution",
       "Commercial Real Estate & Land Use",
     ],
-    email: "e.rostova@legalvertex.com",
-    phone: "+1 (800) 555-0199 ext. 102",
+    email: "legalvertexservices@gmail.com",
+    phone: "+91 91226 30161 ext. 102",
   },
   {
     slug: "david-chen",
@@ -78,8 +78,8 @@ export const attorneys: Attorney[] = [
     ],
     bio: "David bridges technology and legal strategy. With an MIT engineering background, he counsels premier AI startups, semiconductor corporations, and biomedical firms on high-value IP protection and licensing.",
     practiceAreas: ["Intellectual Property & Technology"],
-    email: "d.chen@legalvertex.com",
-    phone: "+1 (800) 555-0199 ext. 103",
+    email: "legalvertexservices@gmail.com",
+    phone: "+91 62078 88741 ext. 103",
   },
   {
     slug: "sarah-jenkins",
@@ -99,7 +99,7 @@ export const attorneys: Attorney[] = [
     ],
     bio: "Prior to joining Legal Vertex, Sarah served for seven years as an Assistant U.S. Attorney, leading investigations into securities fraud, cybersecurity breaches, and foreign corrupt practices.",
     practiceAreas: ["Regulatory Compliance & Government Investigations"],
-    email: "s.jenkins@legalvertex.com",
-    phone: "+1 (800) 555-0199 ext. 104",
+    email: "legalvertexservices@gmail.com",
+    phone: "+91 62078 88741 ext. 104",
   },
 ];

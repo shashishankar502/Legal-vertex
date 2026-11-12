@@ -120,8 +120,8 @@ export default function Home() {
                       <MapPin className="w-4 h-4" />
                     </div>
                     <div>
-                      <div className="text-xs font-bold text-slate-900">San Francisco Headquarters</div>
-                      <div className="text-[10px] text-slate-500">Admitted Across California &amp; Federal Circuits</div>
+                      <div className="text-xs font-bold text-slate-900">Patna &amp; Bengaluru Offices</div>
+                      <div className="text-[10px] text-slate-500">Commercial Advisory &amp; Litigation Practice</div>
                     </div>
                   </div>
                   <span className="hidden sm:inline-block text-[10px] font-bold text-amber-800 bg-amber-100/70 border border-amber-300 px-2 py-0.5 rounded">

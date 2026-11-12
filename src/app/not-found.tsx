@@ -1,12 +1,19 @@
 import Link from "next/link";
-import { Scale, ArrowLeft } from "lucide-react";
+import Image from "next/image";
+import { ArrowLeft } from "lucide-react";
 
 export default function NotFound() {
   return (
     <div className="min-h-[70vh] flex items-center justify-center px-4 py-20 text-center">
       <div className="max-w-md mx-auto space-y-6">
-        <div className="w-16 h-16 rounded-full bg-amber-50 border border-amber-200 flex items-center justify-center mx-auto text-amber-700">
-          <Scale className="w-8 h-8" />
+        <div className="w-20 h-20 rounded-2xl bg-amber-50 border border-amber-200 flex items-center justify-center mx-auto p-2 shadow-xs">
+          <Image
+            src="/icon.png"
+            alt="Legal Vertex"
+            width={64}
+            height={64}
+            className="w-full h-full object-contain"
+          />
         </div>
         <div className="space-y-2">
           <span className="text-xs font-bold tracking-wider uppercase text-amber-700">

@@ -24,7 +24,7 @@ export function getLegalServiceSchema() {
     logo: `${siteConfig.url}/logo.png`,
     image: `${siteConfig.url}/og-image.jpg`,
     description: siteConfig.description,
-    telephone: siteConfig.contact.phone,
+    telephone: [siteConfig.contact.phone, siteConfig.contact.secondaryPhone],
     email: siteConfig.contact.email,
     priceRange: siteConfig.contact.priceRange,
     openingHours: siteConfig.contact.openingHours,
@@ -36,6 +36,19 @@ export function getLegalServiceSchema() {
       postalCode: siteConfig.contact.address.postalCode,
       addressCountry: siteConfig.contact.address.addressCountry,
     },
+    department: siteConfig.contact.offices.map((office) => ({
+      "@type": "LegalService",
+      name: `${siteConfig.name} - ${office.city} Office`,
+      telephone: siteConfig.contact.phone,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: `${office.building}, ${office.landmark}`,
+        addressLocality: office.city,
+        addressRegion: office.state,
+        postalCode: office.postalCode,
+        addressCountry: "IN",
+      },
+    })),
     geo: {
       "@type": "GeoCoordinates",
       latitude: siteConfig.contact.geo.latitude,

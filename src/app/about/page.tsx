@@ -89,8 +89,8 @@ export default function AboutPage() {
             </div>
             <div className="p-5 sm:p-6 bg-white border border-slate-200 rounded-xl text-center space-y-2 shadow-xs">
               <Award className="w-7 h-7 sm:w-8 sm:h-8 text-amber-700 mx-auto" />
-              <div className="text-sm sm:text-base font-serif font-bold text-slate-900">Multi-Bar Admissions</div>
-              <div className="text-xs text-slate-500 leading-relaxed">Licensed across California, New York, D.C. &amp; USPTO</div>
+              <div className="text-sm sm:text-base font-serif font-bold text-slate-900">Multi-Bench Representation</div>
+              <div className="text-xs text-slate-500 leading-relaxed">High Courts, Supreme Court of India &amp; Appellate Tribunals</div>
             </div>
             <div className="p-5 sm:p-6 bg-white border border-slate-200 rounded-xl text-center space-y-2 shadow-xs">
               <Scale className="w-7 h-7 sm:w-8 sm:h-8 text-amber-700 mx-auto" />

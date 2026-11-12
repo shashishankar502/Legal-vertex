@@ -32,6 +32,15 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "./",
   },
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/icon.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: [
+      { url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -74,12 +83,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="scroll-smooth bg-slate-50 text-slate-900 antialiased">
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className="scroll-smooth bg-slate-50 text-slate-900 antialiased"
+    >
       <head>
         <JsonLd data={getLegalServiceSchema()} />
         <JsonLd data={getWebSiteSchema()} />
       </head>
-      <body className="min-h-screen flex flex-col selection:bg-amber-100 selection:text-amber-900 bg-slate-50 text-slate-800">
+      <body
+        suppressHydrationWarning
+        className="min-h-screen flex flex-col selection:bg-amber-100 selection:text-amber-900 bg-slate-50 text-slate-800"
+      >
         <Navbar />
         <main className="flex-1 pb-20 sm:pb-0">{children}</main>
         <Footer />

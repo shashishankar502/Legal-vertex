@@ -7,7 +7,7 @@ import { Phone, Mail, MapPin, Clock, Lock } from "lucide-react";
 export const metadata: Metadata = {
   title: "Contact Legal Vertex | Schedule Confidential Legal Consultation",
   description:
-    "Get in touch with Legal Vertex LLP. Located in San Francisco, CA. Call +1 (800) 555-0199 or submit a confidential case evaluation inquiry online.",
+    "Get in touch with Legal Vertex LLP. Offices in Patna and Bengaluru. Call +91 91226 30161 or +91 62078 88741 or submit a confidential case evaluation inquiry online.",
   alternates: {
     canonical: "/contact",
   },
@@ -46,43 +46,72 @@ export default function ContactPage() {
           <div className="lg:col-span-5 space-y-6 sm:space-y-8">
             <div>
               <h2 className="text-xl sm:text-2xl font-serif font-bold text-slate-900 mb-1.5 sm:mb-2">
-                Headquarters &amp; Direct Lines
+                Our Office Locations &amp; Direct Lines
               </h2>
               <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                Operating from the heart of the Financial District with national and cross-border capabilities.
+                Operating from strategic locations in Patna and Bengaluru with nationwide advisory and litigation capabilities.
               </p>
             </div>
 
-            <address className="not-italic space-y-3.5 sm:space-y-5 text-xs sm:text-sm text-slate-700">
-              <div className="flex items-start gap-3 p-3.5 sm:p-4 bg-white border border-slate-200 rounded-lg shadow-xs">
-                <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-amber-600 shrink-0 mt-0.5" />
-                <div>
-                  <strong className="block font-semibold text-slate-900">Physical Address</strong>
-                  <span>{siteConfig.contact.address.streetAddress}</span>
-                  <br />
-                  <span>
-                    {siteConfig.contact.address.addressLocality},{" "}
-                    {siteConfig.contact.address.addressRegion}{" "}
-                    {siteConfig.contact.address.postalCode}
-                  </span>
+            <address className="not-italic space-y-3.5 sm:space-y-4 text-xs sm:text-sm text-slate-700">
+              {/* Office 1 - Patna */}
+              <div className="flex items-start gap-3 p-3.5 sm:p-4 bg-white border border-slate-200 rounded-xl shadow-xs hover:border-amber-400 transition-colors">
+                <MapPin className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
+                <div className="space-y-1">
+                  <div className="flex items-center gap-2">
+                    <strong className="block font-bold text-slate-900 text-sm">Office 1 &bull; Patna</strong>
+                    <span className="text-[10px] uppercase font-bold text-amber-800 bg-amber-100 px-2 py-0.5 rounded">
+                      Bihar
+                    </span>
+                  </div>
+                  <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
+                    Flat No - 703, 7th Floor, Venus Empire, Khagaul Road, Near Govinda International School, Patna &ndash; 801503
+                  </p>
                 </div>
               </div>
 
-              <div className="flex items-start gap-3 p-3.5 sm:p-4 bg-white border border-slate-200 rounded-lg shadow-xs">
+              {/* Office 2 - Bengaluru */}
+              <div className="flex items-start gap-3 p-3.5 sm:p-4 bg-white border border-slate-200 rounded-xl shadow-xs hover:border-amber-400 transition-colors">
+                <MapPin className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
+                <div className="space-y-1">
+                  <div className="flex items-center gap-2">
+                    <strong className="block font-bold text-slate-900 text-sm">Office 2 &bull; Bengaluru</strong>
+                    <span className="text-[10px] uppercase font-bold text-amber-800 bg-amber-100 px-2 py-0.5 rounded">
+                      Karnataka
+                    </span>
+                  </div>
+                  <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
+                    Flat No - 007, Ground Floor, Block-A, Shakti Sprinkle Apartment, Begur, Bengaluru &ndash; 560068
+                  </p>
+                </div>
+              </div>
+
+              {/* Phone */}
+              <div className="flex items-start gap-3 p-3.5 sm:p-4 bg-white border border-slate-200 rounded-xl shadow-xs">
                 <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-amber-600 shrink-0 mt-0.5" />
                 <div>
                   <strong className="block font-semibold text-slate-900">Phone &amp; Urgent Inquiries</strong>
-                  <a
-                    href={`tel:${siteConfig.contact.phone.replace(/[^0-9+]/g, "")}`}
-                    className="text-amber-700 hover:text-amber-800 font-semibold"
-                  >
-                    {siteConfig.contact.displayPhone}
-                  </a>
-                  <div className="text-[10px] sm:text-xs text-slate-500 mt-0.5">Direct partner dispatch line</div>
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 mt-0.5">
+                    <a
+                      href={`tel:${siteConfig.contact.phone.replace(/[^0-9+]/g, "")}`}
+                      className="text-amber-700 hover:text-amber-800 font-semibold"
+                    >
+                      {siteConfig.contact.displayPhone}
+                    </a>
+                    <span className="hidden sm:inline text-slate-400">&bull;</span>
+                    <a
+                      href={`tel:${siteConfig.contact.secondaryPhone.replace(/[^0-9+]/g, "")}`}
+                      className="text-amber-700 hover:text-amber-800 font-semibold"
+                    >
+                      {siteConfig.contact.secondaryDisplayPhone}
+                    </a>
+                  </div>
+                  <div className="text-[10px] sm:text-xs text-slate-500 mt-0.5">Direct partner dispatch &amp; legal counsel lines</div>
                 </div>
               </div>
 
-              <div className="flex items-start gap-3 p-3.5 sm:p-4 bg-white border border-slate-200 rounded-lg shadow-xs">
+              {/* Email */}
+              <div className="flex items-start gap-3 p-3.5 sm:p-4 bg-white border border-slate-200 rounded-xl shadow-xs">
                 <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-amber-600 shrink-0 mt-0.5" />
                 <div>
                   <strong className="block font-semibold text-slate-900">Direct Email</strong>
@@ -96,11 +125,12 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              <div className="flex items-start gap-3 p-3.5 sm:p-4 bg-white border border-slate-200 rounded-lg shadow-xs">
+              {/* Hours */}
+              <div className="flex items-start gap-3 p-3.5 sm:p-4 bg-white border border-slate-200 rounded-xl shadow-xs">
                 <Clock className="w-4 h-4 sm:w-5 sm:h-5 text-amber-600 shrink-0 mt-0.5" />
                 <div>
                   <strong className="block font-semibold text-slate-900">Consultation Hours</strong>
-                  <span>Monday &ndash; Friday: 8:30 AM &ndash; 6:30 PM PST</span>
+                  <span>Monday &ndash; Friday: 9:00 AM &ndash; 7:00 PM IST</span>
                   <div className="text-[10px] sm:text-xs text-slate-500 mt-0.5">Emergency litigation counsel available around the clock</div>
                 </div>
               </div>
@@ -109,7 +139,7 @@ export default function ContactPage() {
             <div className="p-3 sm:p-4 bg-amber-50/70 border border-amber-200/80 rounded-lg flex items-center gap-2.5 sm:gap-3 text-[11px] sm:text-xs text-slate-700">
               <Lock className="w-4 h-4 sm:w-5 sm:h-5 text-amber-700 shrink-0" />
               <span>
-                All inquiries are protected by California &amp; Federal prospective client ethical obligations.
+                All inquiries are protected by Bar Council ethical guidelines and strict client confidentiality privilege.
               </span>
             </div>
           </div>

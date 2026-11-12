@@ -12,7 +12,7 @@ export const homeFaqs: FAQItem[] = [
   {
     question: "How do I schedule an initial legal consultation?",
     answer:
-      "You can arrange an initial confidential consultation by calling our office directly at +1 (800) 555-0199 or completing our secure contact form online. Our intake committee reviews inquiries within 24 business hours.",
+      "You can arrange an initial confidential consultation by calling our office directly at +91 91226 30161 or +91 62078 88741, messaging us on WhatsApp, or completing our secure contact form online. Our intake committee reviews inquiries promptly.",
   },
   {
     question: "How does Legal Vertex structure its attorney billing and legal fees?",
@@ -22,7 +22,7 @@ export const homeFaqs: FAQItem[] = [
   {
     question: "Where are Legal Vertex attorneys licensed to practice?",
     answer:
-      "Our partners are admitted to practice across California, New York, Washington D.C., federal district courts nationwide, the U.S. Patent & Trademark Office (USPTO), and the U.S. Supreme Court, frequently collaborating with co-counsel globally for cross-border cases.",
+      "Our advocates and legal counsel operate from our offices in Patna and Bengaluru, enrolled with the Bar Council of India. We represent clients across State High Courts, the Supreme Court of India, National Company Law Tribunal (NCLT), appellate tribunals, and advise on cross-border corporate transactions.",
   },
   {
     question: "What should I prepare prior to our initial corporate consultation?",
