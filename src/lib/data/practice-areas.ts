@@ -33,7 +33,7 @@ export const practiceAreas: PracticeArea[] = [
       "Faster deal closing through battle-tested negotiation playbooks",
       "Direct partner-level strategic oversight on every transaction",
     ],
-    leadAttorney: "Marcus Vance, Esq.",
+    leadAttorney: "Sagar Sourabh",
   },
   {
     slug: "commercial-litigation-disputes",
@@ -57,7 +57,7 @@ export const practiceAreas: PracticeArea[] = [
       "Trial-ready posture from day one to maximize leverage",
       "Cost-predictable litigation budgeting and transparent milestones",
     ],
-    leadAttorney: "Elena Rostova, J.D.",
+    leadAttorney: "Ravi Shankar",
   },
   {
     slug: "intellectual-property-technology",
@@ -81,7 +81,7 @@ export const practiceAreas: PracticeArea[] = [
       "Deep technical expertise in AI, biotech, and software systems",
       "Commercial monetization and defensive licensing strategies",
     ],
-    leadAttorney: "David K. Chen, Esq.",
+    leadAttorney: "Sagar Sourabh",
   },
   {
     slug: "regulatory-compliance-investigations",
@@ -105,7 +105,7 @@ export const practiceAreas: PracticeArea[] = [
       "Rapid crisis-response protocols minimizing reputational damage",
       "Tailored compliance frameworks built to survive federal audits",
     ],
-    leadAttorney: "Sarah Jenkins, Esq.",
+    leadAttorney: "Ravi Shankar",
   },
   {
     slug: "employment-executive-compensation",
@@ -129,7 +129,7 @@ export const practiceAreas: PracticeArea[] = [
       "Equitable executive compensation plans aligned with IRS rules",
       "Proactive risk assessment preventing high-exposure labor claims",
     ],
-    leadAttorney: "Marcus Vance, Esq.",
+    leadAttorney: "Deependra Kumar",
   },
   {
     slug: "real-estate-land-use",
@@ -153,6 +153,6 @@ export const practiceAreas: PracticeArea[] = [
       "Optimized lease terms protecting landlord and tenant investments",
       "Expedited closings backed by seasoned title examiners",
     ],
-    leadAttorney: "Elena Rostova, J.D.",
+    leadAttorney: "Deependra Kumar",
   },
 ];

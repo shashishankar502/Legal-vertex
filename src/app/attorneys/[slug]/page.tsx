@@ -81,30 +81,31 @@ export default async function AttorneyDetailPage({ params }: PageProps) {
       <section className="bg-gradient-to-b from-slate-100 via-white to-slate-50 border-b border-slate-200 py-10 sm:py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
-            <div className="relative w-20 h-20 sm:w-28 sm:h-28 rounded-2xl overflow-hidden bg-slate-100 border-2 border-amber-400 shrink-0 shadow-md">
+            <div className="relative w-24 h-24 sm:w-32 sm:h-32 rounded-2xl overflow-hidden bg-slate-100 border-2 border-amber-400 shrink-0 shadow-lg">
               <Image
                 src={lawyer.imageUrl}
                 alt={lawyer.name}
                 fill
                 className="object-cover object-top"
-                sizes="112px"
+                sizes="(max-width: 640px) 96px, 128px"
+                priority
               />
             </div>
             <div className="space-y-1 sm:space-y-2">
-              <span className="text-[10px] sm:text-xs uppercase font-bold tracking-wider text-amber-700">
+              <span className="text-[10px] sm:text-xs uppercase font-bold tracking-wider text-amber-700 bg-amber-100/80 px-2.5 py-1 rounded-md inline-block">
                 {lawyer.role}
               </span>
               <h1 className="text-2xl sm:text-4xl lg:text-5xl font-serif font-bold text-slate-900 tracking-tight leading-tight">
                 {lawyer.name}
               </h1>
-              <p className="text-slate-600 text-xs sm:text-sm font-semibold">{lawyer.title}</p>
+              <p className="text-slate-700 text-xs sm:text-sm font-semibold">{lawyer.title}</p>
             </div>
           </div>
         </div>
       </section>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10 sm:py-16 lg:py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-12">
           {/* Main Bio & Details */}
           <article className="lg:col-span-2 space-y-10">
             <div>
@@ -166,8 +167,25 @@ export default async function AttorneyDetailPage({ params }: PageProps) {
             </div>
           </article>
 
-          {/* Contact Card */}
+          {/* Contact Card & Full Portrait Showcase */}
           <aside className="space-y-6">
+            <div className="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-md">
+              <div className="relative h-80 sm:h-96 w-full bg-slate-100">
+                <Image
+                  src={lawyer.imageUrl}
+                  alt={lawyer.name}
+                  fill
+                  className="object-cover object-top"
+                  sizes="(max-width: 1024px) 100vw, 380px"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
+                <div className="absolute bottom-3 left-4 right-4 text-white">
+                  <div className="text-base font-serif font-bold">{lawyer.name}</div>
+                  <div className="text-xs text-amber-300 font-medium">{lawyer.title}</div>
+                </div>
+              </div>
+            </div>
+
             <div className="bg-white border border-slate-200 rounded-xl p-6 space-y-4 shadow-xs">
               <h3 className="text-base font-serif font-bold text-slate-900">
                 Direct Contact

@@ -20,8 +20,8 @@ export const insights: Insight[] = [
     category: "Intellectual Property",
     readTime: "6 min read",
     datePublished: "2026-03-15",
-    authorName: "David K. Chen, Esq.",
-    authorSlug: "david-chen",
+    authorName: "Sagar Sourabh",
+    authorSlug: "sagar-sourabh",
     imageUrl:
       "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80",
     content: [
@@ -39,8 +39,8 @@ export const insights: Insight[] = [
     category: "Regulatory & Compliance",
     readTime: "5 min read",
     datePublished: "2026-02-28",
-    authorName: "Sarah Jenkins, Esq.",
-    authorSlug: "sarah-jenkins",
+    authorName: "Ravi Shankar",
+    authorSlug: "ravi-shankar",
     imageUrl:
       "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80",
     content: [
@@ -57,8 +57,8 @@ export const insights: Insight[] = [
     category: "Corporate & M&A",
     readTime: "7 min read",
     datePublished: "2026-01-20",
-    authorName: "Marcus Vance, Esq.",
-    authorSlug: "marcus-vance",
+    authorName: "Deependra Kumar",
+    authorSlug: "deependra-kumar",
     imageUrl:
       "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80",
     content: [

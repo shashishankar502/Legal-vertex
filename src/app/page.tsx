@@ -346,6 +346,7 @@ export default function Home() {
       </section>
 
       {/* Featured Senior Partners with Real Executive Portraits */}
+      {/* Meet Our Attorneys Preview */}
       <section aria-labelledby="attorneys-heading" className="py-12 sm:py-16 lg:py-20 max-w-7xl mx-auto px-4 sm:px-6">
         <ScrollReveal direction="up">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 sm:gap-6 mb-8 sm:mb-10">
@@ -354,7 +355,7 @@ export default function Home() {
                 Legal Advocates
               </span>
               <h2 id="attorneys-heading" className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-slate-900 mt-1">
-                Meet Our Senior Partners
+                Meet Our Leadership &amp; Legal Partners
               </h2>
             </div>
             <Link
@@ -367,43 +368,43 @@ export default function Home() {
           </div>
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
           {attorneys.map((lawyer, idx) => (
-            <ScrollReveal key={lawyer.slug} delay={idx * 90} direction="up">
+            <ScrollReveal key={lawyer.slug} delay={idx * 110} direction="up">
               <article className="bg-white border border-slate-200 rounded-2xl overflow-hidden hover:border-amber-400 hover:-translate-y-1.5 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group shadow-xs h-full">
                 <div>
                   {/* Executive Headshot */}
-                  <div className="relative h-60 sm:h-64 w-full bg-slate-100 overflow-hidden">
+                  <div className="relative h-72 sm:h-80 w-full bg-slate-100 overflow-hidden">
                     <Image
                       src={lawyer.imageUrl}
                       alt={lawyer.name}
                       fill
-                      className="object-cover object-top group-hover:scale-108 transition-transform duration-700 ease-out"
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                      className="object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
+                      sizes="(max-width: 768px) 100vw, 33vw"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent" />
                     
-                    <div className="absolute bottom-3 left-3 right-3 text-white">
-                      <h3 className="text-base sm:text-lg font-serif font-bold leading-snug">
+                    <div className="absolute bottom-3.5 left-4 right-4 text-white">
+                      <h3 className="text-lg sm:text-xl font-serif font-bold leading-snug drop-shadow-sm">
                         <Link href={`/attorneys/${lawyer.slug}`} className="hover:text-amber-300 transition-colors">
                           {lawyer.name}
                         </Link>
                       </h3>
-                      <div className="text-[11px] text-amber-300 font-semibold">{lawyer.title}</div>
+                      <div className="text-xs text-amber-300 font-semibold mt-0.5">{lawyer.title}</div>
                     </div>
                   </div>
 
-                  <div className="p-4 sm:p-5 space-y-2">
-                    <div className="text-[11px] font-semibold text-slate-500 uppercase tracking-wider">
+                  <div className="p-5 space-y-2">
+                    <div className="text-[11px] font-semibold text-amber-700 uppercase tracking-wider">
                       {lawyer.role}
                     </div>
-                    <p className="text-xs text-slate-600 line-clamp-3 leading-relaxed">
+                    <p className="text-xs sm:text-sm text-slate-600 line-clamp-3 leading-relaxed">
                       {lawyer.bio}
                     </p>
                   </div>
                 </div>
 
-                <div className="px-4 pb-4 sm:px-5 sm:pb-5 pt-3 border-t border-slate-100">
+                <div className="px-5 pb-5 pt-3 border-t border-slate-100">
                   <Link
                     href={`/attorneys/${lawyer.slug}`}
                     className="text-xs font-semibold text-amber-700 hover:text-amber-800 transition-colors inline-flex items-center gap-1 group/btn"
