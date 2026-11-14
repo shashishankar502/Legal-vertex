@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Breadcrumbs } from "@/components/layout/Breadcrumb";
 import { ConsultationCta } from "@/components/common/ConsultationCta";
+import { ScrollReveal } from "@/components/common/ScrollReveal";
 import { attorneys } from "@/lib/data/attorneys";
 import { siteConfig } from "@/lib/site-config";
 import { Mail, Phone, GraduationCap, Scale, ArrowRight } from "lucide-react";
@@ -43,78 +44,88 @@ export default function AttorneysPage() {
         </div>
       </section>
 
-      <section className="py-10 sm:py-16 lg:py-20 max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {attorneys.map((lawyer) => (
-            <article
-              key={lawyer.slug}
-              className="bg-white border border-slate-200 rounded-2xl overflow-hidden hover:border-amber-400 hover:shadow-xl transition-all duration-300 flex flex-col justify-between shadow-xs group"
-            >
-              <div>
-                {/* Full Executive Portrait */}
-                <div className="relative h-72 sm:h-80 w-full bg-slate-100 overflow-hidden">
-                  <Image
-                    src={lawyer.imageUrl}
-                    alt={lawyer.name}
-                    fill
-                    className="object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent" />
-                  
-                  <div className="absolute bottom-3.5 left-4 right-4 text-white">
-                    <h2 className="text-lg sm:text-xl font-serif font-bold leading-snug drop-shadow-sm">
-                      <Link href={`/attorneys/${lawyer.slug}`} className="hover:text-amber-300 transition-colors">
-                        {lawyer.name}
-                      </Link>
-                    </h2>
-                    <div className="text-xs text-amber-300 font-semibold mt-0.5">{lawyer.title}</div>
-                  </div>
-                </div>
-
-                <div className="p-5 sm:p-6 space-y-3">
-                  <div className="text-[11px] font-semibold text-amber-700 uppercase tracking-wider">
-                    {lawyer.role}
-                  </div>
-
-                  <p className="text-xs sm:text-sm text-slate-600 line-clamp-3 leading-relaxed">
-                    {lawyer.bio}
-                  </p>
-
-                  <div className="space-y-1.5 pt-2 border-t border-slate-100">
-                    <div className="text-[11px] sm:text-xs text-slate-600 flex items-center gap-2">
-                      <GraduationCap className="w-3.5 h-3.5 text-amber-700 shrink-0" />
-                      <span className="truncate">{lawyer.education[0]}</span>
-                    </div>
-                    <div className="text-[11px] sm:text-xs text-slate-600 flex items-center gap-2">
-                      <Scale className="w-3.5 h-3.5 text-amber-700 shrink-0" />
-                      <span className="truncate">Admitted: {lawyer.admissions[0]}</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="px-5 pb-5 sm:px-6 sm:pb-6 pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
-                <div className="flex items-center gap-3 text-slate-600">
-                  <a href={`mailto:${lawyer.email}`} className="hover:text-amber-700 flex items-center gap-1 text-[11px] sm:text-xs font-medium">
-                    <Mail className="w-3.5 h-3.5 text-amber-600" />
-                    <span>Email</span>
-                  </a>
-                  <a href={`tel:${lawyer.phone.replace(/[^0-9+]/g, "")}`} className="hover:text-amber-700 flex items-center gap-1 text-[11px] sm:text-xs font-medium">
-                    <Phone className="w-3.5 h-3.5 text-amber-600" />
-                    <span>Call</span>
-                  </a>
-                </div>
-                <Link
-                  href={`/attorneys/${lawyer.slug}`}
-                  className="inline-flex items-center gap-1 font-semibold text-amber-700 hover:text-amber-800 text-[11px] sm:text-xs"
+      <section className="py-10 sm:py-16 lg:py-20 max-w-7xl mx-auto px-4 sm:px-6 overflow-hidden">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
+          {attorneys.map((lawyer, idx) => {
+            const isLeft = (idx % 4) < 2;
+            return (
+              <ScrollReveal
+                key={lawyer.slug}
+                delay={(idx % 2) * 200}
+                duration={2600}
+                direction={isLeft ? "from-left" : "from-right"}
+                className="h-full"
+              >
+                <article
+                  className="bg-white border border-slate-200 rounded-2xl overflow-hidden hover:border-amber-400 hover:shadow-xl transition-all duration-300 flex flex-col justify-between shadow-xs group h-full"
                 >
-                  <span>Biography</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </Link>
-              </div>
-            </article>
-          ))}
+                  <div>
+                    {/* Full Executive Portrait */}
+                    <div className="relative h-64 sm:h-72 w-full bg-slate-100 overflow-hidden">
+                      <Image
+                        src={lawyer.imageUrl}
+                        alt={lawyer.name}
+                        fill
+                        className="object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent" />
+                      
+                      <div className="absolute bottom-3.5 left-4 right-4 text-white">
+                        <h2 className="text-base sm:text-lg font-serif font-bold leading-snug drop-shadow-sm">
+                          <Link href={`/attorneys/${lawyer.slug}`} className="hover:text-amber-300 transition-colors">
+                            {lawyer.name}
+                          </Link>
+                        </h2>
+                        <div className="text-xs text-amber-300 font-semibold mt-0.5">{lawyer.title}</div>
+                      </div>
+                    </div>
+
+                    <div className="p-4 sm:p-5 space-y-2.5">
+                      <div className="text-[11px] font-semibold text-amber-700 uppercase tracking-wider">
+                        {lawyer.role}
+                      </div>
+
+                      <p className="text-xs text-slate-600 line-clamp-3 leading-relaxed">
+                        {lawyer.bio}
+                      </p>
+
+                      <div className="space-y-1 pt-2 border-t border-slate-100">
+                        <div className="text-[11px] text-slate-600 flex items-center gap-1.5 truncate">
+                          <GraduationCap className="w-3.5 h-3.5 text-amber-700 shrink-0" />
+                          <span className="truncate">{lawyer.education[0]}</span>
+                        </div>
+                        <div className="text-[11px] text-slate-600 flex items-center gap-1.5 truncate">
+                          <Scale className="w-3.5 h-3.5 text-amber-700 shrink-0" />
+                          <span className="truncate">Admitted: {lawyer.admissions[0]}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="px-4 pb-4 sm:px-5 sm:pb-5 pt-2.5 border-t border-slate-100 flex items-center justify-between text-xs">
+                    <div className="flex items-center gap-2.5 text-slate-600">
+                      <a href={`mailto:${lawyer.email}`} className="hover:text-amber-700 flex items-center gap-1 text-[11px] font-medium">
+                        <Mail className="w-3.5 h-3.5 text-amber-600" />
+                        <span>Email</span>
+                      </a>
+                      <a href={`tel:${lawyer.phone.replace(/[^0-9+]/g, "")}`} className="hover:text-amber-700 flex items-center gap-1 text-[11px] font-medium">
+                        <Phone className="w-3.5 h-3.5 text-amber-600" />
+                        <span>Call</span>
+                      </a>
+                    </div>
+                    <Link
+                      href={`/attorneys/${lawyer.slug}`}
+                      className="inline-flex items-center gap-1 font-semibold text-amber-700 hover:text-amber-800 text-[11px]"
+                    >
+                      <span>Bio</span>
+                      <ArrowRight className="w-3 h-3" />
+                    </Link>
+                  </div>
+                </article>
+              </ScrollReveal>
+            );
+          })}
         </div>
       </section>
 

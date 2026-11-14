@@ -13,48 +13,49 @@ export interface Insight {
 
 export const insights: Insight[] = [
   {
-    slug: "navigating-ai-ip-patent-eligibility-2026",
-    title: "Navigating AI Patents and Intellectual Property Rights in 2026",
+    slug: "gst-input-tax-credit-litigation-itc-blockage",
+    title: "Navigating GST Input Tax Credit (ITC) Blockage & Scrutiny under Rule 86A",
     description:
-      "A comprehensive analysis of USPTO guidelines, Federal Circuit rulings on machine learning inventions, and best practices for safeguarding algorithmic trade secrets.",
-    category: "Intellectual Property",
+      "A strategic legal analysis of departmental ITC restrictions, procedural safeguards, and relief mechanisms before the High Court under Article 226.",
+    category: "Taxation Law",
     readTime: "6 min read",
     datePublished: "2026-03-15",
     authorName: "Sagar Sourabh",
     authorSlug: "sagar-sourabh",
     imageUrl:
-      "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80",
     content: [
-      "The rapid evolution of generative neural networks and autonomous AI agents has forced courts and patent offices worldwide to reassess foundational IP doctrines.",
-      "In this briefing, we examine the three pivotal components every tech enterprise must address: patent eligibility under 35 U.S.C. § 101, inventorship declarations for machine-assisted discovery, and the strategic hybrid balance between patent disclosure and trade secrecy.",
-      "Recent rulings clarify that while purely computational concepts remain ineligible as abstract ideas, specific algorithmic improvements that solve defined systems latency, cryptographic integrity, or real-time inference hurdles pass muster under the Alice/Mayo framework.",
-      "Enterprises must institute rigorous source-code provenance tracking and clean-room training protocols to insulate their products against third-party copyright and trade secret infringement litigation.",
+      "The invocation of Rule 86A of the CGST Rules by tax authorities to disallow electronic credit ledger debits has emerged as a major flashpoint for commercial enterprises and traders.",
+      "While departmental officers possess emergency powers to protect revenue, judicial precedents consistently mandate that such powers cannot be exercised mechanically without tangible evidence of fraudulent credit or non-existent suppliers.",
+      "Taxpayers confronted with arbitrary ITC blockage must first file detailed objections establishing bonafide purchases backed by tax invoices, e-way bills, and bank payment trails to demonstrate compliance under Section 16(2) of the CGST Act.",
+      "Where revenue authorities fail to provide reasoned orders or exceed the one-year statutory sunset clause under Rule 86A(3), approaching the High Court under Article 226 remains the most effective remedy to unfreeze operational capital.",
     ],
   },
   {
-    slug: "sec-scrutiny-corporate-esg-disclosures",
-    title: "SEC Enforcement Trends: Assessing Scrutiny on Corporate Governance Disclosures",
+    slug: "anticipatory-bail-guidelines-crpc-bnss-defense",
+    title: "Strategic Principles of Anticipatory Bail & FIR Quashing under BNSS & CrPC",
     description:
-      "Understanding new regulatory standards, climate risk reporting mandates, and executive accountability in quarterly filings.",
-    category: "Regulatory & Compliance",
+      "Understanding the essential evidentiary parameters for securing pre-arrest bail and quashing frivolous FIRs before State High Courts.",
+    category: "Criminal Defense",
     readTime: "5 min read",
     datePublished: "2026-02-28",
     authorName: "Ravi Shankar",
     authorSlug: "ravi-shankar",
     imageUrl:
-      "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=800&q=80",
     content: [
-      "Federal regulatory agencies have substantially expanded their examination of public and pre-IPO disclosures, with heightened enforcement focus on ESG metrics, cybersecurity readiness, and supply-chain risk attestations.",
-      "Boards of directors must ensure internal audit committees maintain direct oversight over qualitative statements in investor presentations, avoiding discrepancies with mandatory SEC filings.",
-      "Proactive internal compliance reviews and documented stress tests offer corporations the most reliable shield against formal SEC investigative inquiries and private securities class actions.",
+      "Securing anticipatory bail in non-bailable offences requires an immediate, disciplined presentation of facts before the Sessions Court or High Court, establishing the absence of custodial interrogation requirements.",
+      "The Supreme Court of India in landmark precedents has established that personal liberty is the rule and arrest the exception, emphasizing that pre-trial incarceration should not be deployed as punitive measure in commercial or family disputes.",
+      "For false or malicious complaints arising out of business or civil disagreements, initiating quashing petitions under Section 482 of the CrPC / Section 528 of the BNSS offers a decisive constitutional shield against prolonged trial harassment.",
+      "Meticulous documentation including contemporaneous written communication, bank transaction records, and statutory notices forms the backbone of an effective pre-arrest legal defense.",
     ],
   },
   {
-    slug: "cross-border-ma-antitrust-playbook",
-    title: "Cross-Border Mergers & Acquisitions: The Modern Antitrust Playbook",
+    slug: "civil-property-injunction-specific-performance-cpc",
+    title: "Injunctions and Specific Performance in Commercial Land & Property Disputes",
     description:
-      "How multinational acquirers navigate simultaneous scrutiny from the FTC, DOJ, and international competition regulators to close complex transactions.",
-    category: "Corporate & M&A",
+      "Key litigation strategies under Order XXXIX of CPC and the Specific Relief Act for protecting immovable property and commercial contracts.",
+    category: "Civil Litigation",
     readTime: "7 min read",
     datePublished: "2026-01-20",
     authorName: "Deependra Kumar",
@@ -62,9 +63,10 @@ export const insights: Insight[] = [
     imageUrl:
       "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80",
     content: [
-      "The global merger control landscape has become significantly more rigorous. Regulatory bodies are examining non-horizontal mergers, ecosystem acquisitions, and nascent competitor buyouts with unprecedented vigor.",
-      "Dealmakers must formulate regulatory clearance strategies long before signing definitive agreements, incorporating flexible closing conditions, regulatory ticking fees, and pre-negotiated remedy packages.",
-      "Legal Vertex's M&A practice routinely collaborates with economic consulting experts to prepare evidentiary defenses that substantiate pro-competitive efficiencies and consumer benefits early in the second request phase.",
+      "Property litigation in fast-growing metropolitan centers like Patna and Bengaluru demands immediate injunctive protection to safeguard land titles against unauthorized alienation or illegal third-party construction.",
+      "Under Order XXXIX Rules 1 & 2 of the Code of Civil Procedure (CPC), an applicant must satisfy the tripartite test: establishing a prima facie case, balance of convenience, and irreparable injury that cannot be compensated in monetary damages.",
+      "Following the 2018 amendment to the Specific Relief Act, courts are generally mandated to enforce the specific performance of valid land and commercial contracts, eliminating discretionary judicial refusal except under narrow statutory exceptions.",
+      "Legal Vertex combines rigorous revenue record verification (Khata, Jamabandi, and encumbrance certificates) with strategic civil filings to guarantee title security for purchasers, developers, and institutional titleholders.",
     ],
   },
 ];

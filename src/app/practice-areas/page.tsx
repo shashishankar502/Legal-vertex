@@ -2,21 +2,22 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/layout/Breadcrumb";
 import { ConsultationCta } from "@/components/common/ConsultationCta";
+import { ScrollReveal } from "@/components/common/ScrollReveal";
 import { practiceAreas } from "@/lib/data/practice-areas";
 import { siteConfig } from "@/lib/site-config";
-import { ArrowRight, Scale, Briefcase, ShieldAlert, ShieldCheck, Users, Building2 } from "lucide-react";
+import { ArrowRight, Scale, Briefcase, ShieldAlert, ShieldCheck, Users, Building2, FileText } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Legal Practice Areas & Commercial Services",
+  title: "Core Practice Areas | Civil, Criminal & Taxation Law",
   description:
-    "Explore Legal Vertex practice areas: Corporate M&A, Commercial Litigation, Intellectual Property, Regulatory Compliance, Employment Law, and Real Estate.",
+    "Explore Legal Vertex core practice areas: Civil & Criminal Litigation, and Direct & Indirect Taxation Law across District Courts, High Courts, and Supreme Court of India.",
   alternates: {
     canonical: "/practice-areas",
   },
   openGraph: {
     title: "Legal Practice Areas | Legal Vertex LLP",
     description:
-      "Comprehensive corporate and litigation legal services tailored for high-growth enterprises and institutional organizations.",
+      "Strategic courtroom advocacy and tax counsel in Civil, Criminal, and Taxation Law across Patna, Bengaluru, and pan-India forums.",
     url: `${siteConfig.url}/practice-areas`,
   },
 };
@@ -29,6 +30,7 @@ export default function PracticeAreasPage() {
     ShieldCheck: <ShieldCheck className="w-5 h-5 sm:w-6 sm:h-6 text-amber-700" />,
     Users: <Users className="w-5 h-5 sm:w-6 sm:h-6 text-amber-700" />,
     Building2: <Building2 className="w-5 h-5 sm:w-6 sm:h-6 text-amber-700" />,
+    FileText: <FileText className="w-5 h-5 sm:w-6 sm:h-6 text-amber-700" />,
   };
 
   return (
@@ -51,53 +53,69 @@ export default function PracticeAreasPage() {
         </div>
       </section>
 
-      <section className="py-10 sm:py-16 lg:py-20 max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8">
-          {practiceAreas.map((area) => (
-            <article
-              key={area.slug}
-              className="bg-white border border-slate-200 rounded-xl p-5 sm:p-8 hover:border-amber-400 hover:shadow-lg transition-all flex flex-col justify-between shadow-xs"
-            >
-              <div className="space-y-3 sm:space-y-4">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-amber-50 border border-amber-200 flex items-center justify-center">
-                  {iconMap[area.iconName] || <Scale className="w-5 h-5 sm:w-6 sm:h-6 text-amber-700" />}
-                </div>
-                <h2 className="text-xl sm:text-2xl font-serif font-bold text-slate-900 leading-snug">
-                  <Link href={`/practice-areas/${area.slug}`} className="hover:text-amber-700 transition-colors">
-                    {area.title}
-                  </Link>
-                </h2>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                  {area.detailedDescription}
-                </p>
-
-                <div className="pt-1 sm:pt-2">
-                  <h3 className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-amber-700 mb-1.5 sm:mb-2">
-                    Key Legal Capabilities
-                  </h3>
-                  <ul className="grid grid-cols-1 gap-1 text-[11px] sm:text-xs text-slate-700">
-                    {area.keyServices.map((service) => (
-                      <li key={service} className="flex items-center gap-2">
-                        <span className="w-1.5 h-1.5 rounded-full bg-amber-600 shrink-0" />
-                        <span>{service}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-
-              <div className="pt-4 sm:pt-6 mt-4 sm:mt-6 border-t border-slate-100 flex items-center justify-between text-xs">
-                <span className="text-slate-500 font-medium truncate mr-2">Lead Counsel: {area.leadAttorney}</span>
-                <Link
-                  href={`/practice-areas/${area.slug}`}
-                  className="inline-flex items-center gap-1 font-semibold text-amber-700 hover:text-amber-800 transition-colors shrink-0"
+      <section className="py-10 sm:py-16 lg:py-20 max-w-7xl mx-auto px-4 sm:px-6 overflow-hidden">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-8">
+          {practiceAreas.map((area, idx) => {
+            const isLeft = idx % 2 === 0;
+            return (
+              <ScrollReveal
+                key={area.slug}
+                direction={isLeft ? "from-left" : "from-right"}
+                delay={(idx % 2) * 200}
+                duration={2600}
+                className="h-full"
+              >
+                <article
+                  className="bg-white border border-slate-200 rounded-2xl p-5 sm:p-6 hover:border-amber-400 hover:shadow-xl transition-all duration-300 flex flex-col justify-between shadow-xs group h-full"
                 >
-                  <span>Practice Overview</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </Link>
-              </div>
-            </article>
-          ))}
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between">
+                      <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
+                        {iconMap[area.iconName] || <Scale className="w-5 h-5 text-amber-700" />}
+                      </div>
+                      <span className="text-[10px] uppercase font-bold tracking-wider text-amber-800 bg-amber-100/80 px-2.5 py-0.5 rounded-full">
+                        Core Area
+                      </span>
+                    </div>
+
+                    <h2 className="text-lg sm:text-xl font-serif font-bold text-slate-900 group-hover:text-amber-700 transition-colors leading-snug">
+                      <Link href={`/practice-areas/${area.slug}`}>
+                        {area.title}
+                      </Link>
+                    </h2>
+
+                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed line-clamp-3">
+                      {area.shortDescription}
+                    </p>
+
+                    <div className="pt-2 border-t border-slate-100">
+                      <h3 className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-amber-700 mb-1.5">
+                        Key Legal Capabilities
+                      </h3>
+                      <ul className="space-y-1 text-xs text-slate-700">
+                        {area.keyServices.slice(0, 3).map((service) => (
+                          <li key={service} className="flex items-center gap-2 truncate">
+                            <span className="w-1.5 h-1.5 rounded-full bg-amber-600 shrink-0" />
+                            <span className="truncate">{service}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div className="pt-4 mt-4 border-t border-slate-100 flex items-center justify-end text-xs">
+                    <Link
+                      href={`/practice-areas/${area.slug}`}
+                      className="inline-flex items-center gap-1 font-semibold text-amber-700 hover:text-amber-800 transition-colors"
+                    >
+                      <span>Practice Overview</span>
+                      <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+                    </Link>
+                  </div>
+                </article>
+              </ScrollReveal>
+            );
+          })}
         </div>
       </section>
 

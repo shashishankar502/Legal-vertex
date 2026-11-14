@@ -25,7 +25,7 @@ export function Navbar() {
         <div className="max-w-7xl mx-auto flex justify-between items-center gap-2">
           <div className="flex items-center gap-2 text-slate-600 truncate">
             <Shield className="w-3.5 h-3.5 text-amber-600 shrink-0" />
-            <span className="truncate font-semibold text-slate-800">Commercial Law &amp; Strategic Advisory</span>
+            <span className="truncate font-semibold text-slate-800">Civil, Criminal &amp; Taxation Law Counsel</span>
             <span className="hidden md:inline text-slate-300">|</span>
             <span className="hidden md:inline text-slate-500 text-[11px]">
               Patna &amp; Bengaluru Offices &bull; Nationwide Legal Counsel
@@ -53,25 +53,28 @@ export function Navbar() {
       {/* Main Sticky Navbar (Dark Blue Background) */}
       <header className="sticky top-0 z-50 bg-[#0B1528]/95 backdrop-blur-md border-b border-slate-800/80 shadow-md shadow-black/20 text-white transition-colors">
         <div className="max-w-7xl mx-auto px-3 sm:px-6">
-          <div className="flex items-center justify-between h-16 sm:h-20">
-            {/* Logo */}
+          <div className="flex items-center justify-between h-18 sm:h-22">
+            {/* Logo & Tagline */}
             <Link
               href="/"
-              className="flex items-center group focus:outline-none focus:ring-2 focus:ring-amber-400 rounded-md py-1"
+              className="flex items-end gap-2 sm:gap-2.5 group focus:outline-none focus:ring-2 focus:ring-amber-400 rounded-md py-1"
               aria-label="Legal Vertex Home"
             >
               <Image
                 src="/logo.png"
                 alt="Legal Vertex"
-                width={260}
-                height={133}
+                width={280}
+                height={144}
                 priority
-                className="h-10 sm:h-12 md:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105 drop-shadow-[0_2px_12px_rgba(217,119,6,0.25)]"
+                className="h-12 sm:h-14 md:h-16 lg:h-[68px] w-auto object-contain transition-transform duration-300 group-hover:scale-105 drop-shadow-[0_2px_14px_rgba(217,119,6,0.3)]"
               />
+              <span className="cursive-tagline text-amber-300/90 group-hover:text-amber-200 transition-colors text-xs sm:text-[13px] md:text-sm select-none translate-y-[2px] sm:translate-y-[3px] self-end drop-shadow-[0_1px_6px_rgba(251,191,36,0.25)] whitespace-nowrap">
+                ... Setting the Standards
+              </span>
             </Link>
 
             {/* Desktop Navigation */}
-            <nav aria-label="Main Navigation" className="hidden lg:flex items-center gap-8">
+            <nav aria-label="Main Navigation" className="hidden lg:flex items-center gap-6 xl:gap-8">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}

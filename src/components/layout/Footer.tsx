@@ -27,11 +27,11 @@ export function Footer() {
               />
             </Link>
             <p className="text-sm text-slate-600 max-w-sm leading-relaxed">
-              Legal Vertex LLP delivers aggressive litigation defense, strategic corporate M&amp;A advisory, intellectual property counseling, and regulatory compliance guidance for ambitious organizations.
+              Legal Vertex LLP delivers aggressive trial defense and strategic legal counsel in Civil litigation, Criminal defense, Bail proceedings, and Direct &amp; Indirect Taxation.
             </p>
             <div className="flex items-center gap-2 text-xs text-amber-700 font-medium pt-2">
               <ShieldCheck className="w-4 h-4 text-amber-600" />
-              <span>Dedicated Corporate, Litigation &amp; Intellectual Property Counsel</span>
+              <span>Dedicated Civil, Criminal &amp; Taxation Law Counsel</span>
             </div>
           </div>
 

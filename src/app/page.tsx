@@ -34,6 +34,7 @@ export default function Home() {
     ShieldCheck: <ShieldCheck className="w-5 h-5 text-amber-700" />,
     Users: <Users className="w-5 h-5 text-amber-700" />,
     Building2: <Building2 className="w-5 h-5 text-amber-700" />,
+    FileText: <FileText className="w-5 h-5 text-amber-700" />,
   };
 
   return (
@@ -53,18 +54,18 @@ export default function Home() {
             <div className="lg:col-span-7 space-y-4 sm:space-y-6 animate-fade-in-up">
               <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 border border-amber-200 text-amber-900 text-[11px] sm:text-xs font-semibold tracking-wide shadow-xs">
                 <Award className="w-3.5 h-3.5 text-amber-700 shrink-0" />
-                <span>Commercial Litigation &amp; Corporate Advisory</span>
+                <span>Civil, Criminal &amp; Taxation Legal Counsel</span>
               </div>
 
               <h1 className="text-3xl sm:text-5xl lg:text-6xl font-serif font-bold text-slate-900 tracking-tight leading-[1.18] sm:leading-[1.12]">
-                Strategic Legal Counsel &amp;{" "}
+                Strategic Trial Advocacy &amp;{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-700 via-amber-600 to-amber-800">
-                  Commercial Advocacy
+                  Taxation Counsel
                 </span>
               </h1>
 
               <p className="text-sm sm:text-lg text-slate-600 leading-relaxed max-w-xl">
-                Legal Vertex advises enterprises, growing businesses, and leadership teams across corporate transactions, commercial dispute resolution, intellectual property, and regulatory compliance.
+                Legal Vertex delivers formidable trial representation and strategic legal defense across Civil disputes, Criminal defense, Bail proceedings, and Direct &amp; Indirect Taxation in Patna, Bengaluru, and pan-India forums.
               </p>
 
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-4 pt-1 sm:pt-2">
@@ -217,64 +218,74 @@ export default function Home() {
           </div>
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
-          {practiceAreas.map((area, idx) => (
-            <ScrollReveal key={area.slug} delay={idx * 80} direction="up">
-              <article className="bg-white border border-slate-200 rounded-2xl overflow-hidden hover:border-amber-400 hover:-translate-y-1.5 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group shadow-xs h-full">
-                <div>
-                  {/* Practice Area Image */}
-                  <div className="relative h-44 sm:h-48 w-full bg-slate-100 overflow-hidden">
-                    <Image
-                      src={area.imageUrl}
-                      alt={area.title}
-                      fill
-                      className="object-cover group-hover:scale-108 transition-transform duration-700 ease-out"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/20 to-transparent" />
-                    
-                    <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-white">
-                      <div className="w-8 h-8 rounded-lg bg-white/90 backdrop-blur-xs flex items-center justify-center text-amber-700 shadow-sm transition-transform duration-300 group-hover:scale-110">
-                        {iconMap[area.iconName] || <Scale className="w-4 h-4 text-amber-700" />}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
+          {practiceAreas.map((area, idx) => {
+            const isLeft = (idx % 4) < 2;
+            const staggerDelay = (idx % 2) * 200;
+            return (
+              <ScrollReveal
+                key={area.slug}
+                delay={staggerDelay}
+                duration={2600}
+                direction={isLeft ? "from-left" : "from-right"}
+                className="h-full"
+              >
+                <article className="bg-white border border-slate-200 rounded-2xl overflow-hidden hover:border-amber-400 hover:-translate-y-1.5 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group shadow-xs h-full">
+                  <div>
+                    {/* Practice Area Image */}
+                    <div className="relative h-40 sm:h-44 w-full bg-slate-100 overflow-hidden">
+                      <Image
+                        src={area.imageUrl}
+                        alt={area.title}
+                        fill
+                        className="object-cover group-hover:scale-108 transition-transform duration-700 ease-out"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-slate-950/20 to-transparent" />
+                      
+                      <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-white">
+                        <div className="w-8 h-8 rounded-lg bg-white/95 backdrop-blur-xs flex items-center justify-center text-amber-700 shadow-sm transition-transform duration-300 group-hover:scale-110">
+                          {iconMap[area.iconName] || <Scale className="w-4 h-4 text-amber-700" />}
+                        </div>
+                        <span className="text-[9px] uppercase font-bold tracking-wider bg-slate-900/85 px-2 py-0.5 rounded text-amber-300">
+                          Practice
+                        </span>
                       </div>
-                      <span className="text-[10px] uppercase font-bold tracking-wider bg-slate-900/80 px-2 py-0.5 rounded text-amber-300">
-                        Core Practice
-                      </span>
+                    </div>
+
+                    <div className="p-4 sm:p-5 space-y-2">
+                      <h3 className="text-base sm:text-lg font-serif font-bold text-slate-900 group-hover:text-amber-700 transition-colors leading-snug line-clamp-1">
+                        <Link href={`/practice-areas/${area.slug}`} className="focus:outline-none">
+                          {area.title}
+                        </Link>
+                      </h3>
+                      <p className="text-xs text-slate-600 line-clamp-2 leading-relaxed">
+                        {area.shortDescription}
+                      </p>
+                      <ul className="space-y-1 pt-1 border-t border-slate-100">
+                        {area.keyServices.slice(0, 2).map((service) => (
+                          <li key={service} className="text-[11px] text-slate-600 flex items-center gap-1.5 truncate">
+                            <span className="w-1 h-1 rounded-full bg-amber-600 shrink-0" />
+                            <span className="truncate">{service}</span>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                   </div>
 
-                  <div className="p-5 sm:p-6 space-y-3">
-                    <h3 className="text-lg sm:text-xl font-serif font-bold text-slate-900 group-hover:text-amber-700 transition-colors leading-snug">
-                      <Link href={`/practice-areas/${area.slug}`} className="focus:outline-none">
-                        {area.title}
-                      </Link>
-                    </h3>
-                    <p className="text-xs sm:text-sm text-slate-600 line-clamp-3 leading-relaxed">
-                      {area.shortDescription}
-                    </p>
-                    <ul className="space-y-1 pt-1 border-t border-slate-100">
-                      {area.keyServices.slice(0, 3).map((service) => (
-                        <li key={service} className="text-[11px] sm:text-xs text-slate-600 flex items-center gap-2">
-                          <span className="w-1.5 h-1.5 rounded-full bg-amber-600 shrink-0" />
-                          <span>{service}</span>
-                        </li>
-                      ))}
-                    </ul>
+                  <div className="px-4 pb-4 sm:px-5 sm:pb-5 pt-2.5 border-t border-slate-100 flex items-center justify-end text-xs">
+                    <Link
+                      href={`/practice-areas/${area.slug}`}
+                      className="text-amber-700 font-semibold group-hover:translate-x-1 transition-transform inline-flex items-center gap-1 text-[11px]"
+                    >
+                      <span>Explore Practice</span>
+                      <span className="text-xs">&rarr;</span>
+                    </Link>
                   </div>
-                </div>
-
-                <div className="px-5 pb-5 sm:px-6 sm:pb-6 pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
-                  <span className="text-slate-500 font-medium truncate mr-2">Lead: {area.leadAttorney}</span>
-                  <Link
-                    href={`/practice-areas/${area.slug}`}
-                    className="text-amber-700 font-semibold group-hover:translate-x-1 transition-transform inline-flex items-center gap-1 shrink-0"
-                  >
-                    Learn More &rarr;
-                  </Link>
-                </div>
-              </article>
-            </ScrollReveal>
-          ))}
+                </article>
+              </ScrollReveal>
+            );
+          })}
         </div>
       </section>
 
@@ -368,54 +379,64 @@ export default function Home() {
           </div>
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
-          {attorneys.map((lawyer, idx) => (
-            <ScrollReveal key={lawyer.slug} delay={idx * 110} direction="up">
-              <article className="bg-white border border-slate-200 rounded-2xl overflow-hidden hover:border-amber-400 hover:-translate-y-1.5 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group shadow-xs h-full">
-                <div>
-                  {/* Executive Headshot */}
-                  <div className="relative h-72 sm:h-80 w-full bg-slate-100 overflow-hidden">
-                    <Image
-                      src={lawyer.imageUrl}
-                      alt={lawyer.name}
-                      fill
-                      className="object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
-                      sizes="(max-width: 768px) 100vw, 33vw"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent" />
-                    
-                    <div className="absolute bottom-3.5 left-4 right-4 text-white">
-                      <h3 className="text-lg sm:text-xl font-serif font-bold leading-snug drop-shadow-sm">
-                        <Link href={`/attorneys/${lawyer.slug}`} className="hover:text-amber-300 transition-colors">
-                          {lawyer.name}
-                        </Link>
-                      </h3>
-                      <div className="text-xs text-amber-300 font-semibold mt-0.5">{lawyer.title}</div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 max-w-7xl mx-auto">
+          {attorneys.map((lawyer, idx) => {
+            const isLeft = (idx % 4) < 2;
+            const staggerDelay = (idx % 2) * 200;
+            return (
+              <ScrollReveal
+                key={lawyer.slug}
+                delay={staggerDelay}
+                duration={2600}
+                direction={isLeft ? "from-left" : "from-right"}
+                className="h-full"
+              >
+                <article className="bg-white border border-slate-200 rounded-2xl overflow-hidden hover:border-amber-400 hover:-translate-y-1.5 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group shadow-xs h-full">
+                  <div>
+                    {/* Executive Headshot */}
+                    <div className="relative h-64 sm:h-72 w-full bg-slate-100 overflow-hidden">
+                      <Image
+                        src={lawyer.imageUrl}
+                        alt={lawyer.name}
+                        fill
+                        className="object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent" />
+                      
+                      <div className="absolute bottom-3.5 left-4 right-4 text-white">
+                        <h3 className="text-base sm:text-lg font-serif font-bold leading-snug drop-shadow-sm">
+                          <Link href={`/attorneys/${lawyer.slug}`} className="hover:text-amber-300 transition-colors">
+                            {lawyer.name}
+                          </Link>
+                        </h3>
+                        <div className="text-xs text-amber-300 font-semibold mt-0.5">{lawyer.title}</div>
+                      </div>
+                    </div>
+
+                    <div className="p-4 sm:p-5 space-y-2">
+                      <div className="text-[11px] font-semibold text-amber-700 uppercase tracking-wider">
+                        {lawyer.role}
+                      </div>
+                      <p className="text-xs text-slate-600 line-clamp-3 leading-relaxed">
+                        {lawyer.bio}
+                      </p>
                     </div>
                   </div>
 
-                  <div className="p-5 space-y-2">
-                    <div className="text-[11px] font-semibold text-amber-700 uppercase tracking-wider">
-                      {lawyer.role}
-                    </div>
-                    <p className="text-xs sm:text-sm text-slate-600 line-clamp-3 leading-relaxed">
-                      {lawyer.bio}
-                    </p>
+                  <div className="px-4 pb-4 sm:px-5 sm:pb-5 pt-3 border-t border-slate-100">
+                    <Link
+                      href={`/attorneys/${lawyer.slug}`}
+                      className="text-xs font-semibold text-amber-700 hover:text-amber-800 transition-colors inline-flex items-center gap-1 group/btn"
+                    >
+                      <span>View Full Biography</span>
+                      <span className="transition-transform group-hover/btn:translate-x-1">&rarr;</span>
+                    </Link>
                   </div>
-                </div>
-
-                <div className="px-5 pb-5 pt-3 border-t border-slate-100">
-                  <Link
-                    href={`/attorneys/${lawyer.slug}`}
-                    className="text-xs font-semibold text-amber-700 hover:text-amber-800 transition-colors inline-flex items-center gap-1 group/btn"
-                  >
-                    <span>View Full Biography</span>
-                    <span className="transition-transform group-hover/btn:translate-x-1">&rarr;</span>
-                  </Link>
-                </div>
-              </article>
-            </ScrollReveal>
-          ))}
+                </article>
+              </ScrollReveal>
+            );
+          })}
         </div>
       </section>
 

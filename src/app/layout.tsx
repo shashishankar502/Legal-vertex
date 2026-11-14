@@ -4,6 +4,7 @@ import { siteConfig } from "@/lib/site-config";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { QuickContactFloating } from "@/components/common/QuickContactFloating";
+import { LegalDisclaimerModal } from "@/components/common/LegalDisclaimerModal";
 import { JsonLd, getLegalServiceSchema, getWebSiteSchema } from "@/components/seo/JsonLd";
 
 export const viewport: Viewport = {
@@ -89,6 +90,12 @@ export default function RootLayout({
       className="scroll-smooth bg-slate-50 text-slate-900 antialiased"
     >
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Dancing+Script:wght@600&family=Alex+Brush&display=swap"
+          rel="stylesheet"
+        />
         <JsonLd data={getLegalServiceSchema()} />
         <JsonLd data={getWebSiteSchema()} />
       </head>
@@ -100,6 +107,7 @@ export default function RootLayout({
         <main className="flex-1 pb-20 sm:pb-0">{children}</main>
         <Footer />
         <QuickContactFloating />
+        <LegalDisclaimerModal />
       </body>
     </html>
   );

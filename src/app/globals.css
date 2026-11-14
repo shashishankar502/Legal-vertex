@@ -1,10 +1,17 @@
 @import "tailwindcss";
 
+/* Global styles and resets */
 html,
 body {
   overflow-x: clip;
   max-width: 100vw;
   -webkit-tap-highlight-color: transparent;
+}
+
+.cursive-tagline {
+  font-family: 'Great Vibes', 'Dancing Script', 'Alex Brush', 'Segoe Script', 'Brush Script MT', cursive !important;
+  font-style: italic;
+  font-weight: 400;
 }
 
 /* Luxury Smooth Keyframes */

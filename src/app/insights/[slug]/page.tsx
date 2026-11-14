@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
@@ -49,7 +50,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-export default async function InsightDetailPage({ params }: PageProps) {
+async function InsightContent({ params }: PageProps) {
   const { slug } = await params;
   const article = insights.find((p) => p.slug === slug);
 
@@ -155,5 +156,13 @@ export default async function InsightDetailPage({ params }: PageProps) {
 
       <ConsultationCta />
     </>
+  );
+}
+
+export default function InsightDetailPage(props: PageProps) {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-slate-50 animate-pulse" />}>
+      <InsightContent {...props} />
+    </Suspense>
   );
 }

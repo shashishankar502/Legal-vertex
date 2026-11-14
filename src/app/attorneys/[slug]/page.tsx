@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
@@ -41,7 +42,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-export default async function AttorneyDetailPage({ params }: PageProps) {
+async function AttorneyContent({ params }: PageProps) {
   const { slug } = await params;
   const lawyer = attorneys.find((a) => a.slug === slug);
 
@@ -219,5 +220,13 @@ export default async function AttorneyDetailPage({ params }: PageProps) {
 
       <ConsultationCta />
     </>
+  );
+}
+
+export default function AttorneyDetailPage(props: PageProps) {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-slate-50 animate-pulse" />}>
+      <AttorneyContent {...props} />
+    </Suspense>
   );
 }
